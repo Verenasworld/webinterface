@@ -30,21 +30,16 @@ componentDidMount(){
 }
 
   render(){
-    const listItem = this.state.myAppointments.map(item => (
-      <div>
-        <div>{item.petName}</div>
-        <div>{item.ownerName}</div>
-      </div>
-    ))
+
     return (
       <main className="page bg-white" id="petratings">
           <div className="container">
             <div className="row">
               <div className="col-md-12 bg-white">
                 <div className="container">
-                  {listItem}
+
                   <AddApointsment></AddApointsment>
-                   <ListApoointsment></ListApoointsment>
+                   <ListApoointsment appointments ={this.state.myAppointments}></ListApoointsment>
                     <SearchApointments></SearchApointments>
                  
                 </div>
