@@ -16,13 +16,13 @@ constructor(){
 // lebenszyklua methode wird ausgeführt nachdem das Dom gerendert wurde !! ( externe daten einfügen)
 componentDidMount(){
   fetch('./data.json')
-  //promiss 
+ 
   .then(response => response.json())
   .then(result => {
     const apts = result.map(item => {
       return item;
     })
-    //status ändern
+  
     this.setState({
       myAppointments: apts
     })
@@ -30,13 +30,19 @@ componentDidMount(){
 }
 
   render(){
+    const listItem = this.state.myAppointments.map(item => (
+      <div>
+        <div>{item.petName}</div>
+        <div>{item.ownerName}</div>
+      </div>
+    ))
     return (
       <main className="page bg-white" id="petratings">
           <div className="container">
             <div className="row">
               <div className="col-md-12 bg-white">
                 <div className="container">
-            
+                  {listItem}
                   <AddApointsment></AddApointsment>
                    <ListApoointsment></ListApoointsment>
                     <SearchApointments></SearchApointments>
