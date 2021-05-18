@@ -13,6 +13,20 @@ constructor(){
   }
 }
 
+componentDidMount(){
+  fetch('./data.json')
+  .then(response => response.json())
+  .then(result => {
+    const apts = result.map(item => {
+      return item;
+    })
+
+    this.setState({
+      myAppointments: apts
+    })
+  })
+}
+
   render(){
     return (
       <main className="page bg-white" id="petratings">
