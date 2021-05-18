@@ -5,25 +5,36 @@ import ListApoointsment from './ListApoointsment';
 import SearchApointments from './SearchApointments';
 
 
-class App extends Component() {
+export default class App extends Component {
+constructor(){
+  super();
+  this.state={
+    myLocation: 'Vienna'
+  }
+}
+
   render(){
-  return (
-    <main className="page bg-white" id="petratings">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12 bg-white">
-              <div className="container">
-                <AddApointsment></AddApointsment>
-                 <ListApoointsment></ListApoointsment>
-                 <SearchApointments></SearchApointments>
-               
+    return (
+      <main className="page bg-white" id="petratings">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 bg-white">
+                <div className="container">
+                  {this.state.myLocation}
+                  <AddApointsment></AddApointsment>
+                   <ListApoointsment></ListApoointsment>
+                    <SearchApointments></SearchApointments>
+                 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-  );
-}
-}
+        </main>
+    );
+  }
+  
+  }
+  
 
-export default App;
+
+
