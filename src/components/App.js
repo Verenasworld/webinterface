@@ -9,18 +9,20 @@ export default class App extends Component {
 constructor(){
   super();
   this.state={
-    myLocation: 'Vienna'
+    myAppointments:[]
   }
 }
 
+// lebenszyklua methode wird ausgeführt nachdem das Dom gerendert wurde !! ( externe daten einfügen)
 componentDidMount(){
   fetch('./data.json')
+  //promiss 
   .then(response => response.json())
   .then(result => {
     const apts = result.map(item => {
       return item;
     })
-
+    //status ändern
     this.setState({
       myAppointments: apts
     })
@@ -34,7 +36,7 @@ componentDidMount(){
             <div className="row">
               <div className="col-md-12 bg-white">
                 <div className="container">
-                  {this.state.myLocation}
+            
                   <AddApointsment></AddApointsment>
                    <ListApoointsment></ListApoointsment>
                     <SearchApointments></SearchApointments>
