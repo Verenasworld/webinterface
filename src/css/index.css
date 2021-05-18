@@ -1,0 +1,24 @@
+*{
+  font-family: Calibri, sans-serif;
+}
+
+body {
+  font-weight: 200;
+  background-color: #85bdee;
+  
+}
+
+header a,
+footer a {
+  color: white;
+}
+
+footer {
+  font-size: 0.8em;
+}
+
+.bg-primary,
+.btn-primary {
+  background-color: #377bb5 !important;
+  border: inherit;
+}
