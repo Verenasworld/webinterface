@@ -3,6 +3,7 @@ import '../css/App.css';
 import AddApointsment from './AddApointsment';
 import ListApoointsment from './ListApoointsment';
 import SearchApointments from './SearchApointments';
+import {without} from 'lodash';
 
 
 export default class App extends Component {
@@ -11,7 +12,17 @@ constructor(){
   this.state={
     myAppointments:[],
     lastIndex: 0
-  }
+   
+  };
+  this.deleteAppointment = this.deleteAppointment.bind(this);
+}
+deleteAppointment(apt) {
+  let tempApts = this.state.myAppointments;
+  tempApts = without(tempApts, apt);
+
+  this.setState({
+    myAppointments: tempApts
+  })
 }
 
 // lebenszyklua methode wird ausgeführt nachdem das Dom gerendert wurde !! ( externe daten einfügen)
