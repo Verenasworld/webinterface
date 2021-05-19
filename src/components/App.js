@@ -3,26 +3,40 @@ import '../css/App.css';
 import AddApointsment from './AddApointsment';
 import ListApoointsment from './ListApoointsment';
 import SearchApointments from './SearchApointments';
+import {without} from 'lodash';
 
 
 export default class App extends Component {
 constructor(){
   super();
   this.state={
-    myAppointments:[]
-  }
+    myAppointments:[],
+    lastIndex: 0
+   
+  };
+  this.deleteAppointment = this.deleteAppointment.bind(this);
+}
+deleteAppointment(apt) {
+  let tempApts = this.state.myAppointments;
+  tempApts = without(tempApts, apt);
+
+  this.setState({
+    myAppointments: tempApts
+  })
 }
 
 // lebenszyklua methode wird ausgeführt nachdem das Dom gerendert wurde !! ( externe daten einfügen)
 componentDidMount(){
   fetch('./data.json')
-  //promiss 
+ 
   .then(response => response.json())
   .then(result => {
     const apts = result.map(item => {
+      item.aptId = this.state.lastIndex;
+      this.setState({lastIndex: this.state.lastIndex +1})
       return item;
     })
-    //status ändern
+  
     this.setState({
       myAppointments: apts
     })
@@ -31,32 +45,16 @@ componentDidMount(){
 
   render(){
 
-        const listItems = this.state.myAppointments.map(item => (
-      <div>
-        <div>{item.petName}</div>
-        <div>
-          {item.ownerName}</div>
-
-    const listItems = this.state.myAppointments.map(item => (
-      <div>
-        <div>{item.petName}</div>
-        <div>{item.ownerName}</div>
-      </div>
-    ));
     return (
       <main className="page bg-white" id="petratings">
           <div className="container">
             <div className="row">
               <div className="col-md-12 bg-white">
                 <div className="container">
-
-                  {listItems}
-
-            
-                 <AddApointsment></AddApointsment>
-                   <ListApoointsment></ListApoointsment>
-                    <SearchApointments></SearchApointments>
-                 
+                  <AddApointsment/>
+                   <SearchApointments/>
+                    <ListApoointsment appointments ={this.state.myAppointments}
+                    deleteAppointment = {this.deleteAppointment}/>           
                 </div>
               </div>
             </div>
