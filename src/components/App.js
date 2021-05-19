@@ -51,13 +51,10 @@ componentDidMount(){
             <div className="row">
               <div className="col-md-12 bg-white">
                 <div className="container">
-
                   <AddApointsment/>
-                  
-                    <SearchApointments/>
+                   <SearchApointments/>
                     <ListApoointsment appointments ={this.state.myAppointments}
-                    deleteAppointment = {this.deleteAppointment}/>
-                 
+                    deleteAppointment = {this.deleteAppointment}/>           
                 </div>
               </div>
             </div>
