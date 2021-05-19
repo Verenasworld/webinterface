@@ -15,12 +15,14 @@ margin: 10px ;
 }
 
 .appointment-list {
-  font-size: 1.1em;
+  flex-direction: column;
   
 }
 
 .appointment-list .pet-item {
   border-bottom: 1px dotted gray;
+  display: flex ; 
+  flex-direction: row ;
 }
 
 .appointment-list .pet-item:last-child {
@@ -44,6 +46,7 @@ margin: 10px ;
   font-style: italic;
   position: absolute;
   right: 20px;
+ 
 }
 
 .appointment-list .apt-notes {
@@ -54,4 +57,5 @@ margin: 10px ;
 .dropdown-item:active {
   background-color: #a9aeb2;
 }
+
 

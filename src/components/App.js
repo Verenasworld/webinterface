@@ -46,15 +46,15 @@ componentDidMount(){
   render(){
 
     return (
-      <main className="page bg-white" id="petratings">
-          <div className="container">
-            <div className="row">
+      <main className="page bg-white" id="petratings" >
+          <div className="container" >
+            <div className="row" id="test">
               <div className="col-md-12 bg-white">
-                <div className="container">
-                  <AddApointsment/>
-                   <SearchApointments/>
-                    <ListApoointsment appointments ={this.state.myAppointments}
-                    deleteAppointment = {this.deleteAppointment}/>           
+                <div className="container" >
+                  <AddApointsment />
+                    <SearchApointments/>
+                    <ListApoointsment  appointments ={this.state.myAppointments}
+                    deleteAppointment = {this.deleteAppointment}/> 
                 </div>
               </div>
             </div>
