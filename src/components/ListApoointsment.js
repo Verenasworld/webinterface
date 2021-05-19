@@ -11,7 +11,7 @@ export default class ListApoointsment extends Component {
                 {this.props.appointments.map(item =>(
                      <div className="pet-item col media py-3" key={item.aptId}>
                      <div className="mr-3">
-                       <button className="pet-delete btn btn-sm btn-danger">
+                       <button className="pet-delete btn btn-sm btn-danger" onClick="deleteAppointment()">
                            <FaTimes/>
                        </button>
                      </div>
