@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import Moment from 'moment'
+
 
 
 export default class ListApoointsment extends Component {
@@ -17,7 +19,9 @@ export default class ListApoointsment extends Component {
                      <div className="pet-info media-body">
                        <div className="pet-head d-flex">
                          <span className="pet-name">{item.petName} {item.aptId}</span>
-                         <span className="apt-date ml-auto">{item.aptDate}</span>
+                         <span className="apt-date ml-auto">
+                         {item.aptDate}
+                             </span>
                        </div>
          
                        <div className="owner-name">
