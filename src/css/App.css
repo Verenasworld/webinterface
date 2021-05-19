@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+.add-appointment .card-body {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pet-delete{
+ position: absolute;
+ left: 20px;
+ padding: 1px 7px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.apt-addheading {
+  cursor: pointer;
+  user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.appointment-list {
+  font-size: 1.1em;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.appointment-list .pet-item {
+  border-bottom: 1px dotted gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.appointment-list .pet-item:last-child {
+  border-bottom: none;
 }
+
+.appointment-list .pet-name {
+  font-weight: 600;
+  color: #85bdee;
+  font-size: 1.3em;
+  line-height: 100%;
+  font-weight: 300;
+}
+
+.appointment-list .label-item {
+  font-weight: 600;
+  color: #667b82;
+}
+
+.appointment-list .apt-date {
+  font-style: italic;
+  position: absolute;
+  right: 20px;
+}
+
+.appointment-list .apt-notes {
+  line-height: 120%;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #a9aeb2;
+}
+

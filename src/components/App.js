@@ -39,8 +39,9 @@ componentDidMount(){
                 <div className="container">
 
                   <AddApointsment></AddApointsment>
-                   <ListApoointsment appointments ={this.state.myAppointments}></ListApoointsment>
+                  
                     <SearchApointments></SearchApointments>
+                    <ListApoointsment appointments ={this.state.myAppointments}></ListApoointsment>
                  
                 </div>
               </div>
