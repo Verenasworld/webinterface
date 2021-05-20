@@ -43,6 +43,7 @@ export default class SearchApointments extends Component {
                         'dropdown-item d-flex justify-content-between ' +
                         (this.props.orderBy === 'petName' ? 'active' : '')
                   }
+                  onClick ={e => this.props.changeOrder('petName', this.props.orderDir)}
                   id="petName">
                     Pet Name
                     <font-awesome-icon icon="check"/>
@@ -53,6 +54,7 @@ export default class SearchApointments extends Component {
                         'dropdown-item d-flex justify-content-between ' +
                         (this.props.orderBy === 'aptDate' ? 'active' : '')
                   } 
+                     onClick ={e => this.props.changeOrder('aptDate', this.props.orderDir)}
                      href="#" 
                      id="aptDate">
                     Date
@@ -65,6 +67,7 @@ export default class SearchApointments extends Component {
                     'dropdown-item d-flex justify-content-between ' +
                     (this.props.orderBy === 'ownerName' ? 'active' : '')
                      }
+                     onClick ={e => this.props.changeOrder('ownerName', this.props.orderDir)}
                     id="ownerName">
                     Owner
                     <font-awesome-icon icon="check"/>
@@ -77,6 +80,7 @@ export default class SearchApointments extends Component {
                         'dropdown-item d-flex justify-content-between ' +
                         (this.props.orderDir === 'asc' ? 'active' : '')
                   } 
+                  onClick ={e => this.props.changeOrder(this.props.orderBy, 'asc')}
                     href="#"
                     id="asc"
                   >
@@ -88,7 +92,9 @@ export default class SearchApointments extends Component {
                     className={
                         'dropdown-item d-flex justify-content-between ' +
                         (this.props.orderDir === 'desc' ? 'active' : '')
+                        
                   } 
+                  onClick ={e => this.props.changeOrder(this.props.orderBy, 'desc')}
                     href="#"
                     id="desc"
                   >

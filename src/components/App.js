@@ -12,13 +12,14 @@ constructor(){
   this.state={
     myAppointments:[],
     formDisplay : false,
-    orderBy: 'petName',
+    orderBy: 'aptDate',
     orderDir: 'asc',
     lastIndex: 0
    };
   this.deleteAppointment = this.deleteAppointment.bind(this);
   this.toggleForm = this.toggleForm.bind(this);
   this.addApointsment = this.addApointsment.bind(this);
+  this.changeOrder = this.changeOrder.bind(this);
 }
 
 toggleForm(){
@@ -38,6 +39,13 @@ addApointsment(apt){
     myAppointments: tempApts,
     lastIndex: this.state.lastIndex +1
   });
+}
+
+changeOrder(order, dir){
+  this.setState({
+    orderBy: order,
+    orderDir: dir
+  })
 }
 
 deleteAppointment(apt) {
@@ -101,6 +109,7 @@ return (
                     <SearchApointments 
                     orderBy = {this.state.orderBy}
                     orderDir = {this.state.orderDir}
+                    changeOrder = {this.changeOrder}
                     />
                     <ListApoointsment 
                      appointments ={filteredApts}
