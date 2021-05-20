@@ -21,6 +21,8 @@ export default class SearchApointments extends Component {
                 type="text"
                 className="form-control"
                 aria-label="Search Appointments"
+                onClick= {e => this.props.searchApts(e.target.value)}
+                
               />
         
               <div className="input-group-append">

@@ -14,13 +14,14 @@ constructor(){
     formDisplay : false,
     orderBy: 'aptDate',
     orderDir: 'asc',
-    queryString: 'cat',
+    queryString: '',
     lastIndex: 0
    };
   this.deleteAppointment = this.deleteAppointment.bind(this);
   this.toggleForm = this.toggleForm.bind(this);
   this.addApointsment = this.addApointsment.bind(this);
   this.changeOrder = this.changeOrder.bind(this);
+  this.searchApts = this.searchApts.bind(this);
 }
 
 toggleForm(){
@@ -40,6 +41,11 @@ addApointsment(apt){
     myAppointments: tempApts,
     lastIndex: this.state.lastIndex +1
   });
+}
+
+searchApts(query){
+  this.setState({queryString: query});
+  console.log(query)
 }
 
 changeOrder(order, dir){
@@ -124,6 +130,7 @@ return (
                     orderBy = {this.state.orderBy}
                     orderDir = {this.state.orderDir}
                     changeOrder = {this.changeOrder}
+                    searchApts = {this.searchApts}
                     />
                     <ListApoointsment 
                      appointments ={filteredApts}
