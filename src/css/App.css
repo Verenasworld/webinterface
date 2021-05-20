@@ -4,7 +4,8 @@
 
 .pet-delete{
 
-margin: 10px ;
+margin: 5px ;
+padding: 1px 5px 4px 5px  ;
 
 
 }
@@ -20,7 +21,7 @@ margin: 10px ;
 }
 
 .appointment-list .pet-item {
-  border-bottom: 1px dotted gray;
+  border-bottom: 1px solid gray;
   display: flex ; 
   flex-direction: row ;
 }
@@ -44,8 +45,8 @@ margin: 10px ;
 
 .appointment-list .apt-date {
   font-style: italic;
-  position: absolute;
-  right: 20px;
+ position: absolute;
+ right: 150px;
  
 }
 
