@@ -14,6 +14,7 @@ constructor(){
     formDisplay : false,
     orderBy: 'aptDate',
     orderDir: 'asc',
+    queryString: 'cat',
     lastIndex: 0
    };
   this.deleteAppointment = this.deleteAppointment.bind(this);
@@ -85,7 +86,7 @@ componentDidMount(){
       order = -1;
     }
 
-    filteredApts.sort((a,b) => {
+    filteredApts = filteredApts.sort((a,b) => {
       if(
         a[this.state.orderBy].toLowerCase()<
         b[this.state.orderBy].toLowerCase()
@@ -94,7 +95,20 @@ componentDidMount(){
       }else{
         return 1* order;
       }
-    })
+    }).filter(eachItem => {
+      return(
+        eachItem['petName']
+        .toLowerCase()
+        .includes(this.state.queryString.toLowerCase()) ||
+        eachItem['ownerName']
+        .toLowerCase()
+        .includes(this.state.queryString.toLowerCase()) ||
+        eachItem['aptNotes']
+        .toLowerCase()
+        .includes(this.state.queryString.toLowerCase()) 
+        
+      )
+    });
 
 return (
       <main className="page bg-white" id="petratings" >

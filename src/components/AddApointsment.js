@@ -80,6 +80,7 @@ export default class AddApointsment extends Component {
                       placeholder="Pet's Name"
                       value= {this.state.petName}
                       onChange= {this.handleChange}
+                      required
                     />
                   </div>
                 </div>
@@ -99,6 +100,7 @@ export default class AddApointsment extends Component {
                       placeholder="Owner's Name"
                       value= {this.state.ownerName}
                       onChange= {this.handleChange}
+                      required
                     />
                   </div>
                 </div>
@@ -118,6 +120,7 @@ export default class AddApointsment extends Component {
                       id="aptDate"
                       value= {this.state.aptDate}
                       onChange= {this.handleChange}
+                      required
                     />
                   </div>
                   <label
@@ -132,6 +135,7 @@ export default class AddApointsment extends Component {
                       className="form-control"
                       name="aptTime"
                       id="aptTime"
+                      required
                     />
                   </div>
                 </div>
@@ -150,6 +154,7 @@ export default class AddApointsment extends Component {
                       placeholder="Appointment Notes"
                       value= {this.state.aptNotes}
                       onChange= {this.handleChange}
+                      required
                      
                     />
                   </div>
