@@ -15,7 +15,17 @@ constructor(){
     lastIndex: 0
    };
   this.deleteAppointment = this.deleteAppointment.bind(this);
+  this.toggleForm = this.toggleForm.bind(this);
 }
+
+toggleForm(){
+  this.setState(
+    {
+      formDisplay: !this.state.formDisplay
+    }
+  )
+}
+
 deleteAppointment(apt) {
   let tempApts = this.state.myAppointments;
   tempApts = without(tempApts, apt);
@@ -52,7 +62,8 @@ componentDidMount(){
               <div className="col-md-12 bg-white">
                 <div className="container" >
                   <AddApointsment 
-                  formDisplay= {this.state.formDisplay}/>
+                  formDisplay= {this.state.formDisplay}
+                  toggleForm = {this.toggleForm}/>
                     <SearchApointments/>
                     <ListApoointsment  appointments ={this.state.myAppointments}
                     deleteAppointment = {this.deleteAppointment}/> 
