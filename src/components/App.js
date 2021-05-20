@@ -98,7 +98,10 @@ return (
                   formDisplay= {this.state.formDisplay}
                   toggleForm = {this.toggleForm}
                   AddApointsment = {this.addApointsment}/>
-                    <SearchApointments/>
+                    <SearchApointments 
+                    orderBy = {this.state.orderBy}
+                    orderDir = {this.state.orderDir}
+                    />
                     <ListApoointsment 
                      appointments ={filteredApts}
                     deleteAppointment = {this.deleteAppointment}/> 

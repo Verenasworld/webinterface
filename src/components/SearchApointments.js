@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 
 export default class SearchApointments extends Component {
+
+    state = {
+        isOpen:false
+    };
+
+    toggleOpen = () => this.setState({isOpen: !this.state.isOpen});
+
     render() {
+        const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
         return (
+           
             <div className=" col-md-10 col-lg-8">
             <div className="input-group my-2">
               <input
@@ -17,6 +26,8 @@ export default class SearchApointments extends Component {
                 <button
                   type="button"
                   className="btn btn-primary dropdown-toggle"
+                  onClick= {this.toggleOpen}
+
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
@@ -25,18 +36,35 @@ export default class SearchApointments extends Component {
                   <span className="caret"></span>
                 </button>
         
-                <div className="dropdown-menu dropdown-menu-right">
-                  <a href="#" className="dropdown-item d-flex justify-content-between" id="petName">
+                <div className={menuClass}>
+                  <a href="#" 
+                  className={
+                        'dropdown-item d-flex justify-content-between' +
+                        (this.props.orderBy === 'petName' ? 'active' : '')
+                  }
+                  id="petName">
                     Pet Name
                     <font-awesome-icon icon="check"/>
                   </a>
         
-                  <a className="dropdown-item d-flex justify-content-between" href="#" id="aptDate">
+                  <a 
+                     className={
+                        'dropdown-item d-flex justify-content-between' +
+                        (this.props.orderBy === 'aptDate' ? 'active' : '')
+                  } 
+                     href="#" 
+                     id="aptDate">
                     Date
                     <font-awesome-icon icon="check"/>
                   </a>
         
-                  <a href="#" className="dropdown-item d-flex justify-content-between" id="ownerName">
+                  <a
+                    href="#" 
+                    className={
+                    'dropdown-item d-flex justify-content-between' +
+                    (this.props.orderBy === 'ownerName' ? 'active' : '')
+                     }
+                    id="ownerName">
                     Owner
                     <font-awesome-icon icon="check"/>
                   </a>
@@ -44,7 +72,10 @@ export default class SearchApointments extends Component {
                   <div className="dropdown-divider" role="separator"></div>
         
                   <a
-                    className="dropdown-item d-flex justify-content-between"
+                    className={
+                        'dropdown-item d-flex justify-content-between' +
+                        (this.props.orderDir === 'asc' ? 'active' : '')
+                  } 
                     href="#"
                     id="asc"
                   >
@@ -53,7 +84,10 @@ export default class SearchApointments extends Component {
                   </a>
         
                   <a
-                    className="dropdown-item d-flex justify-content-between"
+                    className={
+                        'dropdown-item d-flex justify-content-between' +
+                        (this.props.orderDir === 'desc' ? 'active' : '')
+                  } 
                     href="#"
                     id="desc"
                   >
