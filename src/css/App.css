@@ -55,7 +55,8 @@ padding: 1px 5px 4px 5px  ;
 }
 
 .dropdown-item.active,
-.dropdown-item:active {
+.dropdown-item:active
+ {
   background-color: #85bdee;
 }
 
