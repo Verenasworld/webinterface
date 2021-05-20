@@ -18,7 +18,15 @@ export default class ListApoointsment extends Component {
          
                      <div className="pet-info media-body">
                        <div className="pet-head d-flex">
-                         <span className="pet-name">{item.petName} {item.aptId}</span>
+                         <span className="pet-name" 
+                         contentEditable 
+                         suppressContentEditableWarning
+                         onBlur = {
+                           e => this.props.updateInfo('petName', e.target.innerText, item.aptId)
+                         }
+                         
+                         >{item.petName}</span>
+                         <span className= "kdnr">Kdnr.: {item.aptId}</span>
                          <span className="apt-date ml-auto">
                            <Moment
                              date= {item.aptDate}
@@ -32,9 +40,21 @@ export default class ListApoointsment extends Component {
          
                        <div className="owner-name">
                          <span className="label-item">Owner: </span>
-                         <span>{item.owner}</span>
+                         <span
+                          contentEditable 
+                          suppressContentEditableWarning
+                          onBlur = {
+                            e => this.props.updateInfo('ownerName', e.target.innerText, item.aptId)
+                          }
+                         >{item.ownerName}</span>
                        </div>
-                       <div className="apt-notes">{item.aptNotes}</div>
+                       <div className="apt-notes"
+                        contentEditable 
+                        suppressContentEditableWarning
+                        onBlur = {
+                          e => this.props.updateInfo('aptNotes', e.target.innerText, item.aptId)
+                        }
+                       >{item.aptNotes}</div>
                      </div>
                    </div>
                 ))}

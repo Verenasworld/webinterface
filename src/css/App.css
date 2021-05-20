@@ -4,8 +4,8 @@
 
 .pet-delete{
 
-margin: 5px ;
-padding: 1px 5px 4px 5px  ;
+margin:0  10px ;
+padding: 0 3px 2px 3px  ;
 
 
 }
@@ -55,8 +55,14 @@ padding: 1px 5px 4px 5px  ;
 }
 
 .dropdown-item.active,
-.dropdown-item:active {
-  background-color: #a9aeb2;
+.dropdown-item:active
+ {
+  background-color: #85bdee;
 }
 
+.kdnr{
+   margin-left: 50px;
+   padding: 0 10px;
+   background-color: #cedfee;
+}
 
