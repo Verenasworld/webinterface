@@ -3,7 +3,7 @@ import '../css/App.css';
 import AddApointsment from './AddApointsment';
 import ListApoointsment from './ListApoointsment';
 import SearchApointments from './SearchApointments';
-import {without} from 'lodash';
+import {findIndex, without} from 'lodash';
 
 
 export default class App extends Component {
@@ -22,6 +22,7 @@ constructor(){
   this.addApointsment = this.addApointsment.bind(this);
   this.changeOrder = this.changeOrder.bind(this);
   this.searchApts = this.searchApts.bind(this);
+  this.updateInfo = this.updateInfo.bind(this);
 }
 
 toggleForm(){
@@ -53,6 +54,18 @@ changeOrder(order, dir){
     orderBy: order,
     orderDir: dir
   })
+}
+
+updateInfo(name, value, id){
+  let tempApts = this.state.myAppointments;
+  let aptIndex = findIndex(this.state.myAppointments, {
+    aptId : id
+  });
+tempApts[aptIndex][name] = value;
+this.setState({
+  myAppointments:tempApts
+})
+
 }
 
 deleteAppointment(apt) {
@@ -134,7 +147,9 @@ return (
                     />
                     <ListApoointsment 
                      appointments ={filteredApts}
-                    deleteAppointment = {this.deleteAppointment}/> 
+                    deleteAppointment = {this.deleteAppointment}
+                    updateInfo={this.updateInfo}
+                    /> 
                 </div>
               </div>
             </div>
