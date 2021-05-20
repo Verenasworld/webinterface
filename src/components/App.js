@@ -11,9 +11,9 @@ constructor(){
   super();
   this.state={
     myAppointments:[],
+    formDisplay : false,
     lastIndex: 0
-   
-  };
+   };
   this.deleteAppointment = this.deleteAppointment.bind(this);
 }
 deleteAppointment(apt) {
@@ -51,7 +51,8 @@ componentDidMount(){
             <div className="row" >
               <div className="col-md-12 bg-white">
                 <div className="container" >
-                  <AddApointsment />
+                  <AddApointsment 
+                  formDisplay= {this.state.formDisplay}/>
                     <SearchApointments/>
                     <ListApoointsment  appointments ={this.state.myAppointments}
                     deleteAppointment = {this.deleteAppointment}/> 
