@@ -13,7 +13,7 @@ constructor(){
     myAppointments:[],
     formDisplay : false,
     orderBy: 'petName',
-    orderDir: 'adescsc',
+    orderDir: 'asc',
     lastIndex: 0
    };
   this.deleteAppointment = this.deleteAppointment.bind(this);
